@@ -6,36 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #ajax{
-            width: 200px;
-            height: 200px;
-            border: black 2px solid;
+        div{
+            width: 300px;
+            height: 300px;
+            border: green 2px solid;
         }
-
     </style>
 </head>
 <body>
-<div id="ajax"></div>
+ <div></div>
 <script type="text/javascript">
-    //获取元素
-    let  ajax = document.getElementById("ajax");
-    //绑定事件
-    ajax.addEventListener("mouseover",function () {
-        //获取对象
+    let divs = document.getElementsByTagName("div")[0];
+    window.onkeydown = function () {
+        //创建对象
         const xml = new XMLHttpRequest();
-        xml.open("POST","http://localhost:8000/server/post");
-        //设置请求头信息
-        // xml.setRequestHeader('','');
+        xml.responseType = "json";
+        xml.open("GET","http://localhost:8848/server/nodemon");
         xml.send();
         xml.onreadystatechange = function () {
-            if (xml.readyState === 4){
+            if (xml.readyState ===4){
                 if (xml.status >= 200 && xml.status < 300){
-                    ajax.innerHTML = xml.response;
+
+                    console.log(xml.response);
+                    divs.innerHTML = xml.response.name;
+
+                }else {
+                    xml.status;
                 }
             }
         }
 
-    });
+    }
+
+
+
 </script>
+
 </body>
 </html>
