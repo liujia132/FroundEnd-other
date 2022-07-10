@@ -10,6 +10,11 @@
  *             webpack  ./src/index.js -o ./build/built.js --mode=development
  *
  *
+ *
+ * 结论：
+ *      1.webpack只能处理js/json资源，不能处理css/img等其他资源
+ *      2.生产环境和开发环境将ES6模块化编译成浏览器呢个识别的模块化
+ *      3.生产环境比开发环境多了一个压缩js代码
  */
 
 //测试css文件
