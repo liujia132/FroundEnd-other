@@ -5,6 +5,10 @@
 *  HMR: hot  module  replacement 热模块替换/模块热替换
 *  作用: 一个模块发生变化,只会重新打包这一个模块(而不是打包所有模块)这样就极大提升构建速度
 *
+*  样式文件: 可以使用HMR功能:  因为style-loader内部已经实现了~~
+* js文件:   默认不能使用HMR功能: 需要修改js代码,添加支持HMR的功能的代码，注意: HMR功能对js的处理，只能处理非入口的js文件的其他文件
+* HTML文件: 默认不能使用HMR功能: 同时也会导致问题: html文件不能热更新了,(不用做HMR功能)
+* 解决： 修改entry入口,将html文件引入即可
 *
 * */
 //解决绝对路径问题
@@ -13,7 +17,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //配置入口起点
-    entry: './src/index.js',
+    entry: ['./src/index.js','./src/index.html'],
     //配置输出
     output: {
         filename: 'js/main.js',
