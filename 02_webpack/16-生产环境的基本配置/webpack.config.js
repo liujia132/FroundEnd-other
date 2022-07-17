@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //开发环境配置
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'development';
 //提取公共的
 const commonLoader = [
     MiniCssExtractPlugin.loader,

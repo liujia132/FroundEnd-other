@@ -5,7 +5,7 @@
 *
 * */
 //解决绝对路径问题
-const {resolve} = require('node:path');
+const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //配置入口起点

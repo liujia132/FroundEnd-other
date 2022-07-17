@@ -1,8 +1,5 @@
 /*
 *   webpack配置文件
-*
-*
-*
 * */
 //解决绝对路径问题
 const {resolve} = require('path');
@@ -37,8 +34,6 @@ module.exports = {
 
                 }
             }
-
-
         ]
 
     },
